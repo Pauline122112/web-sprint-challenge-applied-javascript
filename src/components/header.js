@@ -1,8 +1,24 @@
 const Header = (title, date, temp) => {
-  const header = document.createElement('div')
+  const headerTop = document.createElement('div')
   const dateHead = document.createElement('span')
   const titleHead = document.createElement('h1')
   const temperature = document.createElement('span')
+
+  headerTop.appendChild(dateHead)
+  headerTop.appendChild(titleHead)
+  headerTop.appendChild(temperature)
+
+  headerTop.classList.add(`header`)
+  dateHead.classList.add(`date`)
+  titleHead.classList.add(`title`)
+  temperature.classList.add(`temp`)
+
+  dateHead.textContent = date
+  titleHead.textContent = title
+  temperature.textContent = temp
+
+  return headerTop
+
   // TASK 1
   // ---------------------
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.
@@ -16,6 +32,8 @@ const Header = (title, date, temp) => {
   //  </div>
   //
 }
+
+console.log(Header)
 
 const headerAppender = (selector) => {
   // TASK 2
