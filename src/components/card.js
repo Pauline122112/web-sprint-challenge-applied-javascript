@@ -2,11 +2,12 @@ import { headerAppender } from "./header"
 
 const Card = (article) => {
   const articleCard = document.createElement('div')
-  const headLiner = document.createElement('div')
-  const authId = document.createElement('div')
-  const imgContainer = document.createElement('div')
-  const authPicture = document.createElement('img')
-  const authorInfo = document.createElement('span')
+  articleCard.classList.add('card')
+    const headLiner = document.createElement('div')
+    const authId = document.createElement('div')
+    const imgContainer = document.createElement('div')
+    const authPicture = document.createElement('img')
+    const authorInfo = document.createElement('span')
 
   
   articleCard.classList.add('card')
@@ -16,7 +17,7 @@ const Card = (article) => {
   
   headLiner.textContent = article.headline
   authPicture.src = article.authorPhoto
-  authId.textContent = `By ${article.authorName}`
+  authorInfo.textContent = `By ${article.authorName}`
   
   articleCard.appendChild(headLiner)
   articleCard.appendChild(authId)
