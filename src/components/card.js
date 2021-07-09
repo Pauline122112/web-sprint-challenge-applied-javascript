@@ -1,32 +1,31 @@
 import { headerAppender } from "./header"
 
 const Card = (article) => {
-const articleCard = document.createElement('div')
-articleCard.classList.add('card')
-const headLiner = document.createElement('div')
-const authorName = document.createElement('div')
-const imgContainer = document.createElement('div')
-const authPicture = document.createElement('img')
-const authorInfo = document.createElement('span')
+  const articleCard = document.createElement('div')
+  const headLiner = document.createElement('div')
+  const authId = document.createElement('div')
+  const imgContainer = document.createElement('div')
+  const authPicture = document.createElement('img')
+  const authorInfo = document.createElement('span')
 
-
-headLiner.classList.add(`headline`)
-authorName.classList.add(`author`)
-imgContainer.classList.add(`img-container`)
-
-
-headLiner.textContent = article.headline
-authPicture.src = article.authorPhoto
-authorName.textContent = `By ${article.authorName }`
-
-articleCard.appendChild(headLiner)
-articleCard.appendChild(authorName)
-authorName.appendChild(imgContainer)
-imgContainer.appendChild(authPicture)
-authorName.appendChild(authorInfo)
+  
+  articleCard.classList.add('card')
+  headLiner.classList.add(`headline`)
+  authId.classList.add(`author`)
+  imgContainer.classList.add(`img-container`)
+  
+  headLiner.textContent = article.headline
+  authPicture.src = article.authorPhoto
+  authId.textContent = `By ${article.authorName}`
+  
+  articleCard.appendChild(headLiner)
+  articleCard.appendChild(authId)
+  authId.appendChild(imgContainer)
+  imgContainer.appendChild(authPicture)
+  authId.appendChild(authorInfo)
 
 articleCard.addEventListener(`click`, () => {
-  console.log(article.headline)
+  console.log(article.headLiner)
 })
 
 
