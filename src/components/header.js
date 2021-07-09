@@ -36,6 +36,8 @@ const Header = (title, date, temp) => {
 console.log(Header)
 
 const headerAppender = (selector) => {
+  const info = Header(`Lambda Times`, `June 24th 2021`, `24°​C`)
+  document.querySelector(selector).append(info)
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
