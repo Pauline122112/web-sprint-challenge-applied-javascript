@@ -56,7 +56,6 @@ return articleCard
   //
 
 const cardAppender = (selector) => {
-  const axios = require('axios')
 
 const entryPoint = document.querySelector(selector)
 
