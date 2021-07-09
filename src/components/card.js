@@ -1,3 +1,5 @@
+import axios from "axios"
+import { addDevServerEntrypoints } from "webpack-dev-server"
 import { headerAppender } from "./header"
 
 const Card = (article) => {
@@ -52,7 +54,42 @@ return articleCard
   // The text inside elements will be set using their `textContent` property (NOT `innerText`).
   // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
   //
+
 const cardAppender = (selector) => {
+  const axios = require('axios')
+
+const entryPoint = document.querySelector(selector)
+
+  axios.get(`http://localhost:5000/api/articles`)
+  .then(response => {
+    
+    const javaScpt = response.data.articles.javascript
+    javaScpt.forEach(visible => {
+      entryPoint.appendChild(Card(visible))
+    })
+    const bootStrp = response.data.articles.bootstrap
+    bootStrp.forEach(visible => {
+      entryPoint.appendChild(Card(visible))
+    })
+
+    const tech = response.data.articles.technology
+    tech.forEach(visible => {
+      entryPoint.appendChild(Card(visible))
+    })
+
+  const jQ = response.data.articles.jquery
+    jQ.forEach(visible => {
+      entryPoint.appendChild(Card(visible))
+    })
+
+  const nd = response.data.articles.node
+    nd.forEach(visible => {
+      entryPoint.appendChild(Card(visible))
+    })
+
+    console.log("Here are the articles:", response)
+  })
+}
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
@@ -61,6 +98,6 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-}
+
 
 export { Card, cardAppender }
