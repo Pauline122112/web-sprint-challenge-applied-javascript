@@ -1,36 +1,38 @@
 import { headerAppender } from "./header"
 
 const Card = (article) => {
-
 const articleCard = document.createElement('div')
 const headLiner = document.createElement('div')
 const authorName = document.createElement('div')
 const imgContainer = document.createElement('div')
-const authorPhoto = document.createElement('img')
+const authPicture = document.createElement('img')
 const authorInfo = document.createElement('span')
 
 articleCard.appendChild(headLiner)
 articleCard.appendChild(authorName)
 authorName.appendChild(imgContainer)
-imgContainer.appendChild(authorPhoto)
+imgContainer.appendChild(authPicture)
 authorName.appendChild(authorInfo)
 
 articleCard.classList.add('card')
-headLiner.className = `headline`
+headLiner.classList.add(`headline`)
 authorName.classList.add(`author`)
 imgContainer.classList.add(`img-container`)
 
 
 headLiner.textContent = article.headline
-authorName.textContent = article.authorName
-authorPhoto.src = article.authorPhoto
+authorName.textContent = `By ${article.authorName }`
+authPicture.src = article.authorPhoto
 
-headLiner.addEventListener(`click`, () => {
-  articleCard.classList.toggle(article-open)
+articleCard.addEventListener(`click`, () => {
+  console.log(article.headline)
 })
 
-
+debugger
 return articleCard
+
+}
+
   // <div class="card">
   //   <div class="headline">{ headline }</div>
   //   <div class="author">
@@ -41,7 +43,6 @@ return articleCard
   //   </div>
   // </div>
   //
-}
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
