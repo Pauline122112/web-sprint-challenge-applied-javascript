@@ -18,8 +18,6 @@ return mainNav
 
 
 
-
-
 const tabsAppender = (selector) => {
   const selectTab = document.querySelector(selector)
   axios.get(`http://localhost:5000/api/topics`,{
